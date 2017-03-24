@@ -3,27 +3,7 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<h1>Track all your customers with the click of a button!</h1>
 
-<button class="btn btn-group-lg btn-danger">@Html.ActionLink("New Customer", "New", "Customers")</button>
-<table class="table table-bordered table-hover">
-    <thead>
-        <tr>
-            <th>Customer</th>
-            <th>Email</th>
-        </tr>
-    </thead>
-    <tbody>
-
-        @foreach (var customer in Model)
-        {
-            <tr>
-                <td>@Html.ActionLink(customer.Name, "Edit", "Customers", new { id = customer.Id }, null)</td>
-
-                <td>@customer.Email</td>
-                <td>@Html.ActionLink("Delete", "DeletePage", "Customers", new { id = customer.Id }, null)</td>
-            </tr>
-
-        }
-
-    </tbody>
-</table>
+<h4>Add, delete or modify customers in the database. Click the link below to begin. </h4>
+<h2>@Html.ActionLink(" Manage Customers", "Index", "Customers")</h2>
